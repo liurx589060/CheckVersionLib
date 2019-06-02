@@ -7,6 +7,7 @@ import android.content.res.Resources;
 import android.support.annotation.NonNull;
 
 import com.allenliu.versionchecklib.callback.APKDownloadListener;
+import com.allenliu.versionchecklib.callback.CommitClickListener;
 import com.allenliu.versionchecklib.callback.OnCancelListener;
 import com.allenliu.versionchecklib.utils.FileHelper;
 import com.allenliu.versionchecklib.v2.callback.CustomDownloadFailedListener;
@@ -41,6 +42,7 @@ public class DownloadBuilder {
     private CustomVersionDialogListener customVersionDialogListener;
     private CustomInstallListener customInstallListener;
     private OnCancelListener onCancelListener;
+    private CommitClickListener onCommitListener;
     private ForceUpdateListener forceUpdateListener;
     private UIData versionBundle;
     private Integer newestVersionCode;
@@ -94,6 +96,11 @@ public class DownloadBuilder {
 
     public DownloadBuilder setOnCancelListener(OnCancelListener cancelListener) {
         this.onCancelListener = cancelListener;
+        return this;
+    }
+
+    public DownloadBuilder setOnCommitListener(CommitClickListener commitListener) {
+        this.onCommitListener = commitListener;
         return this;
     }
 
@@ -281,4 +288,7 @@ public class DownloadBuilder {
             return false;
     }
 
+    public CommitClickListener getOnCommitListener() {
+        return onCommitListener;
+    }
 }

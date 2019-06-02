@@ -201,7 +201,7 @@ public class V2Activity extends AppCompatActivity {
     private void forceUpdate() {
 
         Toast.makeText(this, "force update handle", Toast.LENGTH_SHORT).show();
-        finish();
+        //finish();
     }
 
     /**
